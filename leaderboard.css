@@ -1,7 +1,7 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 200;
-  margin: 50px 0;
+  margin: 50px 20px;
   padding: 0;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -9,76 +9,74 @@ body {
   -o-user-select: none;
   user-select: none;
 }
-
 #symptom-error {
   color: #901;
 }
-
 #board {
   width: 100%;
 }
-
 #player_name {
-  width: 70%;
-  font-size: 1em;
-  margin-right: 1em;
+  height: 30px;
+  width: 60%;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 2px;
+  padding-bottom: 4px;
 }
-
 #add_button {
-  padding-left:5px;
-  padding-right: 5px;
+  padding: 0;
+  margin: 0;
   background:#ccc;
   color:#000;
   font-size: 1em;
   font-weight:200;
   border:none;
   height:1.6em;
-  width: 20%;
+  height: 40px;
+  width: 120px;
 }
-
 tr {
   width: 100%;
 }
-
 .player {
   cursor: pointer;
   padding: 5px;
   width: 100%;
 }
-
 .player .name {
   width: 80%;
   font-size: 1.5em;
+  padding-left: 10px;
 }
-
 .player .score {
   width: 20%;
-  text-align: center;
+  text-align: right;
   font-size: 2em;
   font-weight: bold;
   color: #777;
+  padding-right: 10px;
 }
-
 .minus {
-  color: #901;
-  width: 10%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #901;
+  color: #fff;
 }
-
+.minus:active {
+  background-color: #b23;
+}
 .add {
-  color: #2a3;
-  width: 10%;
+  background-color: #2a3;
+  color: #fff;
+  margin-left: 50px;
 }
-
+.add:active {
+  background-color: #4c5;
+}
 .player.selected {
   background-color: #ccc;
 }
-
 .player.selected .score {
   color: black;
 }
-
 .details, .none {
   font-weight: bold;
   font-size: 2em;
@@ -88,11 +86,43 @@ tr {
   margin: 50px 10px;
   padding: 10px 0px;
 }
-
 .none {
   color: #777;
 }
-
+.minus, .add {
+  cursor: pointer;
+  padding: 10px;
+  line-height: 2.4;
+}
 .inc {
   cursor: pointer;
+}
+@media only screen and (min-width : 320px) and (max-width : 480px)  {
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #outer {
+    margin: 20px;
+  }
+  #board {
+    width: 294px;
+  }
+  #player_name {
+    width: 140px;
+  }
+  #add_button {
+    width: 140px;
+  }
+  .player .name {
+    max-width: 176px;
+    overflow: hidden;
+  }
+  .player .score {
+    width: 44px;
+  }
+  .add {
+    margin-left: 10px;
+  }
 }
